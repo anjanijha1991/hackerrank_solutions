@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 struct nodelist
 {
   int d;
@@ -37,9 +36,7 @@ addEdge (struct nodelist *graph, int source, int dest)
   temp = graph[dest].nextnode;
   graph[dest].nextnode = edge2;
   edge2->nextnode = temp;
-
-
-
+  
   return;
 }
 
@@ -104,7 +101,6 @@ dfs (struct nodelist *graph, int source_id, int no_of_nodes)
   printf ("\n");
 
   free (queue);
-
 }
 
 int

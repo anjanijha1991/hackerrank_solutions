@@ -36,7 +36,7 @@ addEdge (struct nodelist *graph, int source, int dest)
   temp = graph[dest].nextnode;
   graph[dest].nextnode = edge2;
   edge2->nextnode = temp;
-  
+
   return;
 }
 
@@ -57,7 +57,7 @@ initGraph (struct nodelist *graph, int no_of_nodes)
 }
 
 void
-dfs (struct nodelist *graph, int source_id, int no_of_nodes)
+bfs (struct nodelist *graph, int source_id, int no_of_nodes)
 {
   int *queue = (int *) malloc (sizeof (int)* no_of_nodes);
 
@@ -127,7 +127,7 @@ main (void)
 	  addEdge (nodes, source - 1, dest - 1);
 	}
       scanf ("%d", &source);
-      dfs (nodes, source - 1, no_of_nodes);
+      bfs (nodes, source - 1, no_of_nodes);
       free (nodes);
 
     }

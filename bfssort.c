@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 struct nodelist
 {
   int d;
@@ -53,7 +54,6 @@ initGraph (struct nodelist *graph, int no_of_nodes)
       graph[i].nextnode = NULL;
 
     }
-
 }
 
 void
@@ -87,7 +87,6 @@ bfs (struct nodelist *graph, int source_id, int no_of_nodes)
 	    }
 	  temp_node = temp_node->nextnode;
 	}
-
     }
 
   for (head = 0; head < no_of_nodes; ++head)
@@ -99,7 +98,6 @@ bfs (struct nodelist *graph, int source_id, int no_of_nodes)
 	}
     }
   printf ("\n");
-
   free (queue);
 }
 
@@ -129,7 +127,6 @@ main (void)
       scanf ("%d", &source);
       bfs (nodes, source - 1, no_of_nodes);
       free (nodes);
-
     }
   return EXIT_SUCCESS;
 }
